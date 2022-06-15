@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>names form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      form {
+        width: 95%;
+        max-width: 300px;
+        margin: 50px auto;
+      }
+      fieldset {
+        border: 1px solid #4EF;
+        border-radius: 5px
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <form onsubmit="myFunction()">
+      <fieldset>
+        <legend>Fruit juice size</legend>
+        <div>
+          <input type="radio" name="size" id="size_1" value="small">
+          <label for="size_1">Small</label>
+        </div>
+        <div>
+          <input type="radio" name="size" id="size_2" value="medium">
+          <label for="size_2">Medium</label>
+        </div>
+        <div>
+          <input type="radio" name="size" id="size_3" value="large">
+          <label for="size_3">Large</label>
+        </div>
+        <!-- <input type="submit" value="Submit"> -->
+        <button type="submit">Submit</button>
+      </fieldset>
+      <p id="demo"></p>
+    </form>
+
+    <script>
+      function myFunction() {
+        event.preventDefault();
+        let choice = document.querySelector('input[name="size"]:checked').value;
+        document.getElementById("demo").innerHTML = choice;
+      }
+    </script>
+
+  </body
+
+</html>
+
