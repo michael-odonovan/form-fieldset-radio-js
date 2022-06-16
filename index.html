@@ -1,54 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>names form</title>
+    <title>form with radio buttons</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <style>
-      form {
+      body {
+        background: #454;
+      }
+      fieldset, .answer {
         width: 95%;
         max-width: 300px;
         margin: 50px auto;
+        border-radius: 5px;
+        font-size: 20px;
       }
-      fieldset {
-        border: 1px solid #4EF;
-        border-radius: 5px
+      legend, .answer {
+        font-size: 25px;
+        color: #eee;
+      }
+      .submit-button {
+        padding: 8px 12px;
+        background: green;
+        margin-top: 20px;
+        border: none;
+        border-radius: 5px;
+        color: white;
       }
     </style>
+
   </head>
-
   <body>
-
     <form onsubmit="myFunction()">
       <fieldset>
-        <legend>Fruit juice size</legend>
+        <legend>Choose your serial</legend>
         <div>
-          <input type="radio" name="size" id="size_1" value="small">
-          <label for="size_1">Small</label>
+          <input type="radio" name="serial" value="Corn Flakes">
+          <label for="cornFlakes">Corn Flakes</label>
         </div>
         <div>
-          <input type="radio" name="size" id="size_2" value="medium">
-          <label for="size_2">Medium</label>
+          <input type="radio" name="serial" value="Bran Flakes">
+          <label for="branFlakes">Bran Flakes</label>
         </div>
         <div>
-          <input type="radio" name="size" id="size_3" value="large">
-          <label for="size_3">Large</label>
+          <input type="radio" name="serial" value="Coco Pops">
+          <label for="cocoPops">Coco Pops</label>
         </div>
-        <!-- <input type="submit" value="Submit"> -->
-        <button type="submit">Submit</button>
+        <input class="submit-button" type="submit" value="submit choice">
       </fieldset>
-      <p id="demo"></p>
+
+      <div class="answer">
+        I really like... <span id="output" class="output"></span>
+      </div>
+
+      
     </form>
 
     <script>
-      function myFunction() {
-        event.preventDefault();
-        let choice = document.querySelector('input[name="size"]:checked').value;
-        document.getElementById("demo").innerHTML = choice;
+      let myFunction = () => {
+      event.preventDefault();
+      let choice = document.querySelector('input[name="serial"]:checked').value;
+      document.getElementById("output").innerHTML = choice
       }
     </script>
-
-  </body
-
+  </body>
 </html>
+
 
