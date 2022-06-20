@@ -32,7 +32,7 @@
 
   </head>
   <body>
-    <form onsubmit="myFunction()">
+    <form onsubmit="handleSubmit()">
       <fieldset>
         <legend>Choose your serial</legend>
         <div>
@@ -54,11 +54,10 @@
         I really like... <span id="output" class="output"></span>
       </div>
 
-      
     </form>
 
     <script>
-      let myFunction = () => {
+      let handleSubmit = () => {
       event.preventDefault();
       let choice = document.querySelector('input[name="serial"]:checked').value;
       document.getElementById("output").innerHTML = choice
